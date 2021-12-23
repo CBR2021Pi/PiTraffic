@@ -6,10 +6,14 @@ OstampelROT = Ampel.Traffic("EAST", "RED")
 OstampelGELB = Ampel.Traffic("EAST", "YELLOW")
 OstampelGRÜN = Ampel.Traffic("EAST", "GREEN")
 
+# Festlegung der Piepser
 Pizzahupe = Ampel.Buzzer()
 
 try:
+    # Endlos-Schleife "while True:" wiederholt die 
+    # folgenden Befehle immer wieder von oben nach unten
     while True:
+        
         # alles anschalten
         OstampelROT.on()
         OstampelGELB.on()
@@ -33,9 +37,11 @@ try:
          
         
 
+# Beim Unterbrechen des Programmes sollen 
+# die folgenden Befehle ausgeführt werden
 except KeyboardInterrupt:
     Pizzahupe.off()
-    PiTraffic.closeGPIO()
+    Ampel.closeGPIO()
     
     
  
