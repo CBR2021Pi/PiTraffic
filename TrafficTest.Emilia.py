@@ -6,6 +6,9 @@ OstampelROT = Ampel.Traffic("EAST", "RED")
 OstampelGELB = Ampel.Traffic("EAST", "YELLOW")
 OstampelGRÜN = Ampel.Traffic("EAST", "GREEN")
 
+# Festlegung der Südampel
+Pizzaampelrot = Ampel.Traffic("SOUTH", "RED")
+
 # Festlegung der Piepser
 Pizzahupe = Ampel.Buzzer()
 
@@ -19,6 +22,7 @@ try:
         OstampelGELB.on()
         OstampelGRÜN.on()
         Pizzahupe.on()
+        Pizzaampelrot.on()
         
         Zeit.sleep(0.2)
         
