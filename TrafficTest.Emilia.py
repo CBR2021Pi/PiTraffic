@@ -11,34 +11,42 @@ Pizzaampelrot = Ampel.Traffic("SOUTH", "RED")
 
 # Festlegung der Piepser
 Pizzahupe = Ampel.Buzzer()
+ 
 
 try:
     # Endlos-Schleife "while True:" wiederholt die 
     # folgenden Befehle immer wieder von oben nach unten
     while True:
-        
-        # alles anschalten
-        OstampelROT.on()
-        OstampelGELB.on()
-        OstampelGRÜN.on()
-        Pizzahupe.on()
-        Pizzaampelrot.on()
-        
-        Zeit.sleep(0.2)
-        
-        OstampelROT.off()
         Pizzahupe.off()
         
-        Zeit.sleep(2)
-        
+        # Halten
+        OstampelROT.on()
         OstampelGELB.off()
-                
-        Zeit.sleep(2)
-        
-        OstampelGRÜN.off()
+        OstampelGRÜN.off() 
         
         Zeit.sleep(3)
-         
+        
+        # Bereitmachen
+        OstampelROT.on()
+        OstampelGELB.on()
+        OstampelGRÜN.off()
+        
+        Zeit.sleep(2)
+        
+        # Fahren
+        OstampelROT.off()
+        OstampelGELB.off()
+        OstampelGRÜN.on()
+        
+        Zeit.sleep(3)
+        
+        # Bremsen
+        OstampelROT.off()
+        OstampelGELB.on()
+        OstampelGRÜN.off()
+        
+        Zeit.sleep(2)
+               
         
 
 # Beim Unterbrechen des Programmes sollen 
